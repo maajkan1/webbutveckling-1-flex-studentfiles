@@ -6,10 +6,14 @@ Global rules
 */
 html {
     margin: 2%;
+    /*Marginal så innehållet inte stöter in i kanten*/
 }
 body {
     margin: auto;
     max-width: 860px;
+    font-family: "Helvetica Neue", "Liberation Sans", Calibri, Arial, sans-serif;
+    /*Flera olika sans-serif fonter för att säkerställa vid olika browsers osv */
+    font-size: 100%;
     /* Lägg till deklarationer här */
 }
 /*
@@ -31,14 +35,40 @@ Page header, all pages
 ==================================================================================
 */
 header {
-    /* text-align: center; */
+     text-align: center;
+}
+/*
+==================================================================================
+Section rule + H1 rule
+==================================================================================
+*/
+h1 {
+    font-family: 'Merienda One', cursive;
+    /*Gör en ny font för H1 men har även kursiv (standard) som en backup*/
+}
+h1::first-letter {
+    color: #00AF64;
+    /*Snyggt sätt att få första bokstaven till nån färg eller liknande, innan denna lektionen
+    hade jag använt mig av .tagline och gjort en helt ny klass i HTML dokumentet, detta var mycket
+    smidigare.*/
+}
+section {
+    display: inline-block;
+    width: 20%;
+    margin-right: 4%;
+    /* Gör så alla sektioner "trycks" ihop till en rad, max width 20% och marginal till höger på 4% */
 }
 /*
 ==================================================================================
 Page footer rules
 ==================================================================================
 */
-
+footer {
+    margin-top: 3em;
+    text-align: center;
+    color: #999;
+    /*Centrerar footern och ger lite marginal till innehåll ovanför */
+}
 /* TODO Avsnitt 5.2 */
 
 /*
@@ -59,7 +89,77 @@ Start page rules
 */
 
 /* Regler med klassen .startpage, avsnitt 5.2, 5.3 och 5.8 */
+.startpage {
+    display: flex; /*Är lite familjär med flexbox och det jag använder mest, hade använt flex här också*/
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.startpage header, .startpage footer {
+    flex: 0 0 100%; /*Ny teknik, sökte upp på Mozilla web och lärde mig väldigt mycket*/
+}
+.startpage section {
+    flex: 0 0 21%; /*Står att man ska skriva 22%, men fick önskat resultat när jag sänkte till 21%*/
+}
+.startpage h1 {
+    font-size: 500%;
+}
+.startpage .logo {
+    width: 235px;
+    height: 198px;
+}
+.hwrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    /* Ett bra sätt att använda sin header på. Jag brukar köra inline på länkarna till höger och sen ha loggan till vänster*/
 
+}
+.hwrap > a {
+    margin-right: 30px;
+    /*Får ner "Vi hjälper dig förstå" under. Mer läsvänligt */
+}
+.tagline {
+    font-size: 120%;
+    padding: 0.5em;
+    border-top: 3px double #00AF64; /*Lägger till classen tagline på <p> för att få önskad effekt */
+    border-bottom: 3px double #00AF64; /*På exempel bilden är det en border bottom med samma färg så lägger till den */
+    margin: 1em 0;
+    width: 100%; /* La till en width 100% för att bordern ska täcka hela "sidan". Använder 100% för det funkar med flex
+    och responsive webdesign, alltså att de funkar på surfplatta och mobil */
+}
+.menu > h2 {
+    font-family: 'Merienda One', cursive; /*Som H1*/
+    box-shadow: inset 0 0 20px #007241; /*En snygg bakgrund på menyerna vid H2 texten som skapar stil*/
+    border-radius: 50%; /*Border radius 50% gör en cirkel, snyggt till proilbilder osv*/
+    margin: 0 0 1em;
+    padding: 2em 0;
+    background-color: #f5f5f5;
+    text-align: center;
+    /*Centrerar h2 texten på menyerna, även lite margin och padding för stil */
+}
+.menu a:link, .menu a:visited {
+    text-decoration: none;
+    color: #000;
+    /*Tar bort underlinen och sätter en snygg färg som inte ändras när man tryckt. Går att highlighta med :hover*/
+}
+.menu a:focus, .menu a:hover {
+    text-decoration: underline;
+    color: #A62F00;
+    /*Gör att det blir underline när man hoverar eller fokusar på <a> länkarna i menyn, ändrar även färg då*/
+}
+.menu a:active {
+    text-decoration: underline;
+    color: #FF4900;
+    /*När man är på te.x "kontakt" sidan och har länkar så lyser den med denna färg och har en underline*/
+}
+@media only screen and (max-width: 768px) {
+    .menu {
+      min-width: 300px;
+    }
+  }
+  /* Lägger en @media för att inte låta sektionerna bli för små, det gör det snyggare när man surfar te.x på surfplatta
+  eller mobiltelefon. Har försökt göra en margin-left på max-width 425px men får inte .menu att centreras. */
 /*
 ==================================================================================
 Subpages
@@ -106,6 +206,7 @@ Adaptive design
 ==================================================================================
 */
 .tagline button {
+    text-align: center;
     /* display: none; */ /* Aktivera */
 }
 @media (max-width: 750px) {
