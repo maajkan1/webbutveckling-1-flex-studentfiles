@@ -2,9 +2,51 @@
 <html lang="sv">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Läxhjälpen</title>
+    <link rel="stylesheet" href="css/laxhjalpen.css" />
+    <meta http-equiv="X-U-Compatible" content="IF=edge"> <!-- 7.10.3 -->
 </head>
-<body>
-    <p> Testar git igen.</p>
+<body class="startpage">
+    <!--Gör en class på bodyn för att targetta specifika bodys i olika textfiler-->
+    <header>
+        <div class="hwrap">
+            <!--En hwrap class, görs för att kunna använda flexbox och positionera content i headern-->
+            <a href="index.html"><img src="img/laxlogo.png" alt="Läxhjälpen logo"></a>
+            <!--En bild med länk som går att klicka på som redirectar till startpagen.
+            Skriver index.html för det är default startpage, gör även en "alt" ifall bilden ej laddar -->
+            <h1>Läxhjälpen</h1>
+            <p>Vi hjälper dig förstå!</p>
+        </div>
+    </header>
+    <section class="menu">
+        <!--En section (rätt semantik) med menu, görs för att kunna targeta flera sections med samma .class-->
+        <h2>
+            <a href="om-oss.html">Vilka vi är &#10065;</a>
+        </h2>
+        <p>Man måste inte vara plugghäst för att plugga. Vi är själva exempel på detta.</p>
+    </section>
+    <section class="menu">
+        <h2>
+            <a href="arbeten.html">Vad vi gör &#128187;</a>
+        </h2>
+         <p>Vi hjälper dig att plugga alla ämnen. Vi förklarar, visar dig vad du ska läsa och förbereder dig för prov.</p>
+    </section>
+    <section class="menu">
+        <h2>
+            <a href="blog.php">Blogg &#10026;</a>
+        </h2>
+         <p>Möt våra nöjda kunder och se exempel på vad vi gjort åt dem.</p>
+    </section>
+    <section class="menu">
+        <h2>
+            <a href="contact.php">Kontakt &#9742;</a>
+        </h2>
+         <p>Hur du hittar och anlitar oss. Kontaktformulär och adresser.</p>
+    </section>
+    <!--La till allt som stog, hittade ej två symboler med HTML kod så la till två andra jag tyckte var snygga/passade.-->
+    <footer>&copy; Lars Gunther och Thelin AB</footer>
+
+
 </body>
 </html>
