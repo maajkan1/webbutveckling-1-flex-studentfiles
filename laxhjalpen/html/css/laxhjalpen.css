@@ -4,6 +4,7 @@
 Global rules
 ==================================================================================
 */
+
 html {
     margin: 2%;
     /*Marginal så innehållet inte stöter in i kanten*/
@@ -43,7 +44,7 @@ Section rule + H1 rule
 ==================================================================================
 */
 h1 {
-    font-family: 'Merienda One', cursive;
+    font-family: 'Merienda', cursive;
     /*Gör en ny font för H1 men har även kursiv (standard) som en backup*/
 }
 h1::first-letter {
@@ -129,7 +130,7 @@ Start page rules
     och responsive webdesign, alltså att de funkar på surfplatta och mobil */
 }
 .menu > h2 {
-    font-family: 'Merienda One', cursive; /*Som H1*/
+    font-family: 'Merienda', cursive; /*Som H1*/
     box-shadow: inset 0 0 20px #007241; /*En snygg bakgrund på menyerna vid H2 texten som skapar stil*/
     border-radius: 50%; /*Border radius 50% gör en cirkel, snyggt till proilbilder osv*/
     margin: 0 0 1em;
