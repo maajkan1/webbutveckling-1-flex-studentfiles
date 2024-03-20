@@ -159,8 +159,13 @@ Start page rules
       min-width: 300px;
     }
   }
+@media only screen and (max-width: 425px) {
+    h1 {
+        font-size: 20px;
+    }
+}
   /* Lägger en @media för att inte låta sektionerna bli för små, det gör det snyggare när man surfar te.x på surfplatta
-  eller mobiltelefon. Har försökt göra en margin-left på max-width 425px men får inte .menu att centreras. */
+  eller mobiltelefon. Även font-size 20px så inte H1 "Läxhjälpen" blir för stor på mobilen.*/
 /*
 ==================================================================================
 Subpages
