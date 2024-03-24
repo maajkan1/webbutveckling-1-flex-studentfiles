@@ -197,7 +197,6 @@ Subpages
     flex: 0 1 20%;
     min-width: 146px;
     margin-right: 10px;
-    outline: 1px solid;
 }
 .subpage .hwrap > h1, div[role=main] {
     flex: 1 1 300px;
@@ -216,6 +215,25 @@ h1 > span {
 .dborder {
     border: 1px solid #ccc;
         padding: 5px;
+}
+figure {
+    float: left;
+    margin: 0;
+}
+figure img {
+    width: 128px;
+    height: 128px;
+}
+figcaption {
+    font: italic bolder 110% sans-serif;
+    font-family: inherit;
+    text-align: center;
+    text-transform: uppercase;
+    color: #666;
+}
+article p {
+    margin-left: 140px;
+    hyphens: auto;
 }
 /*
 ==================================================================================
