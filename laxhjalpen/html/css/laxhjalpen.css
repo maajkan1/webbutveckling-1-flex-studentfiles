@@ -110,7 +110,7 @@ Start page rules
     flex: 0 0 21%; /*Står att man ska skriva 22%, men fick önskat resultat när jag sänkte till 21%*/
 }
 .startpage h1 {
-    font-size: 500%;
+    font-size: 400%; /*Sänker till 400% för att det blir bättre på mobilvy då*/
 }
 .startpage .logo {
     width: 235px;
@@ -168,13 +168,7 @@ Start page rules
       min-width: 300px;
     }
   }
-@media only screen and (max-width: 425px) {
-    h1 {
-    font-size: small;
-    }
-}
-  /* Lägger en @media för att inte låta sektionerna bli för små, det gör det snyggare när man surfar te.x på surfplatta
-  eller mobiltelefon. Även font-size 20px så inte H1 "Läxhjälpen" blir för stor på mobilen.*/
+  /* Lägger en @media för att inte låta sektionerna bli för små, det gör det snyggare när man surfar te.x på surfplatta*/
 /*
 ==================================================================================
 Subpages
