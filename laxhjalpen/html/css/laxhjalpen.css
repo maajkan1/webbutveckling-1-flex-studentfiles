@@ -4,7 +4,15 @@
 Global rules
 ==================================================================================
 */
-
+article {
+    padding-bottom: 1em;
+    margin-bottom: 2em;
+    border-bottom: 3px double #00af64;
+}
+article:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
 html {
     margin: 2%;
     /*Marginal så innehållet inte stöter in i kanten*/
@@ -129,6 +137,7 @@ Start page rules
     width: 100%; /* La till en width 100% för att bordern ska täcka hela "sidan". Använder 100% för det funkar med flex
     och responsive webdesign, alltså att de funkar på surfplatta och mobil */
 }
+.menu > li,
 .menu > h2 {
     font-family: 'Merienda', cursive; /*Som H1*/
     box-shadow: inset 0 0 20px #007241; /*En snygg bakgrund på menyerna vid H2 texten som skapar stil*/
@@ -161,7 +170,7 @@ Start page rules
   }
 @media only screen and (max-width: 425px) {
     h1 {
-        font-size: 20px;
+    font-size: small;
     }
 }
   /* Lägger en @media för att inte låta sektionerna bli för små, det gör det snyggare när man surfar te.x på surfplatta
@@ -173,7 +182,47 @@ Subpages
 */
 
 /* TODO Avsnitt 11.4.1, 11.6,  */
-
+.flex {
+    display: flex; /*Måste få grejerna att flexa, följde instruktinerna i boken men fick inte samma layout, utan tog en ny <div> för att
+    få en parent och har nav och div=main till childrens. */
+}
+.subpage .tagline {
+    border-top: none;
+}
+.subpage .logo {
+    width: 146px;
+    height: 123px;
+}
+.subpage h1 {
+    font-size: 2.6rem; /*260%*/
+}
+.subpage .hwrap {
+    justify-content: space-between;
+}
+.subpage .hwrap > a, nav {
+    flex: 0 1 20%;
+    min-width: 146px;
+    margin-right: 10px;
+    outline: 1px solid;
+}
+.subpage .hwrap > h1, div[role=main] {
+    flex: 1 1 300px;
+}
+h1 > span {
+    color: #a62f00;
+} 
+.menu {
+    margin: 1em 0;
+    padding: 0;
+}
+.menu li {
+    margin: 0 0 1rem;
+    list-style: none;
+} /*Som boken säger så skapar man en egen design av <ul> och <li> och lägger till egna margins och padding.*/
+.dborder {
+    border: 1px solid #ccc;
+        padding: 5px;
+}
 /*
 ==================================================================================
 Tables
