@@ -7,15 +7,16 @@ Global rules
 article {
     padding-bottom: 1em;
     margin-bottom: 2em;
-    border-bottom: 3px double #00af64;
+    border-bottom: 3px double #00af64; /*Ger lite marginaler och padding och sätter en grön border*/
 }
 article:last-child {
     border-bottom: none;
-    margin-bottom: 0;
+    margin-bottom: 0; /*Tar bort gröna linjen på sista <article>, spelar ingen roll om det är 2 eller 20 st, alltid på sista
+    så tar den bort gröna bordern*/
 }
 html {
     margin: 2%;
-    /*Marginal så innehållet inte stöter in i kanten*/
+    /*Marginal så innehållet inte stöter in i varandra*/
 }
 body {
     margin: auto;
@@ -89,54 +90,6 @@ Main site navigation
 /* Alla regler för .menu med relaterade element */
 
 /* TODO Avsnitt 5.2, 5.4, 5.5, 5.6, 11.4.2 */
-
-
-/*
-==================================================================================
-Start page rules
-==================================================================================
-*/
-
-/* Regler med klassen .startpage, avsnitt 5.2, 5.3 och 5.8 */
-.startpage {
-    display: flex; /*Är lite familjär med flexbox och det jag använder mest, hade använt flex här också*/
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.startpage header, .startpage footer {
-    flex: 0 0 100%; /*Ny teknik, sökte upp på Mozilla web och lärde mig väldigt mycket*/
-}
-.startpage section {
-    flex: 0 0 21%; /*Står att man ska skriva 22%, men fick önskat resultat när jag sänkte till 21%*/
-}
-.startpage h1 {
-    font-size: 400%; /*Sänker till 400% för att det blir bättre på mobilvy då*/
-}
-.startpage .logo {
-    width: 235px;
-    height: 198px;
-}
-.hwrap {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    /* Ett bra sätt att använda sin header på. Jag brukar köra inline på länkarna till höger och sen ha loggan till vänster*/
-
-}
-.hwrap > a {
-    margin-right: 30px;
-    /*Får ner "Vi hjälper dig förstå" under. Mer läsvänligt */
-}
-.tagline {
-    font-size: 120%;
-    padding: 0.5em;
-    border-top: 3px double #00AF64; /*Lägger till classen tagline på <p> för att få önskad effekt */
-    border-bottom: 3px double #00AF64; /*På exempel bilden är det en border bottom med samma färg så lägger till den */
-    margin: 1em 0;
-    width: 100%; /* La till en width 100% för att bordern ska täcka hela "sidan". Använder 100% för det funkar med flex
-    och responsive webdesign, alltså att de funkar på surfplatta och mobil */
-}
 .menu > li,
 .menu > h2 {
     font-family: 'Merienda', cursive; /*Som H1*/
@@ -169,6 +122,53 @@ Start page rules
     }
   }
   /* Lägger en @media för att inte låta sektionerna bli för små, det gör det snyggare när man surfar te.x på surfplatta*/
+
+/*
+==================================================================================
+Start page rules
+==================================================================================
+*/
+
+/* Regler med klassen .startpage, avsnitt 5.2, 5.3 och 5.8 */
+.startpage {
+    display: flex; /*Är lite familjär med flexbox och det jag använder mest, hade använt flex här också*/
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.startpage header, .startpage footer {
+    flex: 0 0 100%; /*Ny teknik, sökte upp på Mozilla web och lärde mig väldigt mycket*/
+}
+.startpage section {
+    flex: 0 0 21%; /*Står att man ska skriva 22%, men fick önskat resultat när jag sänkte till 21%*/
+}
+.startpage h1 {
+    font-size: 400%; /*Sänker till 400% för att det blir bättre på mobilvy då*/
+}
+.startpage .logo {
+    width: 235px;
+    height: 198px; /*Bredd och höjd på loggan*/
+}
+.hwrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    /* Ett bra sätt att använda sin header på. Jag brukar köra inline på länkarna till höger och sen ha loggan till vänster*/
+
+}
+.hwrap > a {
+    margin-right: 30px;
+    /*Får ner "Vi hjälper dig förstå" under. Mer läsvänligt */
+}
+.tagline {
+    font-size: 120%;
+    padding: 0.5em;
+    border-top: 3px double #00AF64; /*Lägger till classen tagline på <p> för att få önskad effekt */
+    border-bottom: 3px double #00AF64; /*På exempel bilden är det en border bottom med samma färg så lägger till den */
+    margin: 1em 0;
+    width: 100%; /* La till en width 100% för att bordern ska täcka hela "sidan". Använder 100% för det funkar med flex
+    och responsive webdesign, alltså att de funkar på surfplatta och mobil */
+}
 /*
 ==================================================================================
 Subpages
@@ -181,31 +181,31 @@ Subpages
     få en parent och har nav och div=main till childrens. */
 }
 .subpage .tagline {
-    border-top: none;
+    border-top: none; /*Tar bort toppen av bordern*/
 }
 .subpage .logo {
-    width: 146px;
+    width: 146px; /*Fixar till loggan på om-oss.html*/
     height: 123px;
 }
 .subpage h1 {
     font-size: 2.6rem; /*260%*/
 }
 .subpage .hwrap {
-    justify-content: space-between;
+    justify-content: space-between; /*Ger lika mycket utrymme mellan alla */
 }
 .subpage .hwrap > a, nav {
     flex: 0 1 20%;
-    min-width: 146px;
-    margin-right: 10px;
+    min-width: 146px; 
+    margin-right: 10px; /*Sätter naven till vänster och tar 20% av plats. Margin-right för att få lite avstånd till höger*/
 }
 .subpage .hwrap > h1, div[role=main] {
-    flex: 1 1 300px;
+    flex: 1 1 300px; /*Gör utrymme för <articles> osv */
 }
 h1 > span {
-    color: #a62f00;
+    color: #a62f00; /*Ger de snygga orangea färgen vid "Om Oss" på toppen*/
 } 
 .menu {
-    margin: 1em 0;
+    margin: 1em 0; /*Lite marginaler och tar bort paddingen*/
     padding: 0;
 }
 .menu li {
@@ -214,14 +214,14 @@ h1 > span {
 } /*Som boken säger så skapar man en egen design av <ul> och <li> och lägger till egna margins och padding.*/
 .dborder {
     border: 1px solid #ccc;
-        padding: 5px;
+        padding: 5px; /*Border till bilden*/
 }
 figure {
     float: left;
-    margin: 0;
+    margin: 0; /*Gör så bilden är till vänster om texten*/
 }
 figure img {
-    width: 128px;
+    width: 128px; /*Sätter en bredd å längd på bilderna*/
     height: 128px;
 }
 figcaption {
@@ -229,11 +229,12 @@ figcaption {
     font-family: inherit;
     text-align: center;
     text-transform: uppercase;
-    color: #666;
+    color: #666;   /*Ger en border och fixar till texten där namnen står (te.x Petra, Johan osv). Gör också att
+    det alltid är stora bokstäver och att texten är i center i bordern*/
 }
 article p {
     margin-left: 140px;
-    hyphens: auto;
+    hyphens: auto; /*Ger marginaler vänster och att texten får "-" om den inte får plats på en rad*/
 }
 /*
 ==================================================================================
@@ -272,16 +273,39 @@ Blog page, show and edit
 Adaptive design
 ==================================================================================
 */
-.tagline button {
-    text-align: center;
+.tagline button{
     /* display: none; */ /* Aktivera */
+    display: none;
 }
-@media (max-width: 750px) {
+@media (max-width: 800px) {
     .hwrap > a {
         margin-right: 25px;
     }
+    .subpage .menu {
+        display: none;
+        margin: 0;
+        padding: 0;
+        flex: 0 0 0%;
+    }
+
     /* Lägg till regler enligt kapitel 15 */
+
 }
+/*Är väldigt nöjd med min startpage och kommer därför att bara modifera om-oss.html för att få en fin layout på 
+surfplatta och mobil*/
+@media only screen and (max-width: 550px) {
+    .subpage .hwrap > h1, div[role=main] {
+        flex: 1 1 600px;
+    }
+    article p {
+      margin-left: 5px;  
+    }
+
+}
+/*Jag tog helt enkelt bort naven för tyckte den inte fyllde någon funktion, flesta användarna vet att man kan trycka på loggan
+eller backa för att navigera tillbaka. Vill du att jag ska göra javascriptet med menyn så hojta gärna till så komplimenterar
+jag det. Även kontaktform */
+
 
 /* TODO Avsnitt 15.4.2 + arbetsboken */
 

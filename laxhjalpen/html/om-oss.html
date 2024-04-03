@@ -17,13 +17,13 @@
     <!--Jag brukar ha min <nav> i headern ifall länkarna är på toppen-->
       <div class="hwrap">
         <a href="index.html"><img class="logo" alt="Startsidan" src="img/laxlogo.png"/></a>
-        <h1> Läxhjälpen <span> Om&nbsp;oss</span></h1>
+        <h1> Läxhjälpen <span> Om&nbsp;oss</span></h1> <!--Om oss med <span> vilket gör den orange i CSS-->
       </div>
-      <p class="tagline"></p>
+      <p class="tagline"></p> <!--Ger den gröna linjen under Läxhjälp-->
   </header>
-  <div class="flex">
+  <div class="flex"> <!--Egen gjord parent container för att få flex på allt, special tillverkad av mig haha-->
   <nav>
-    <ul class="menu">
+    <ul class="menu"> <!--Menyn i en <nav>-->
       <li><a href="om-oss.html">Vilka vi är &#x3020;</a></li>
       <li><a href="arbeten.html">Vad vi gör &#x2318;</a></li>
       <li><a href="blog.php">Blogg &#10026;</a></li>
@@ -31,12 +31,12 @@
     </ul>
 
   </nav>
-<div role="main">
-  <article>
-    <figure class="alignleft">
-      <img src="img/tjej1.png" alt="Det här är jag - Mia" />
+<div role="main"> <!--Div Main vilket betyder att main content ska vara i denna diven-->
+  <article>   <!--Rätt semantik, article passar perfekt här-->
+    <figure class="alignleft"> <!--Figure för border osv-->
+      <img src="img/tjej1.png" alt="Det här är jag - Mia" /> <!--Länk till bilden och ett alt ifall bilden inte visas-->
       <figcaption class="dborder">
-        Mia
+        Mia  <!--Sätter namnet i bordern (kolla css kommentarer)-->
       </figcaption>
     </figure>
     <p>
@@ -51,7 +51,8 @@
     <p>
       Om du vill ha hjälp med <strong>svenska, engelska, spanska eller samhällsämnena</strong> då
       står jag gärna till tjänst.
-    </p>
+    </p> <!--La manuellt till alla <p> så att det stämde överens med bilden osv, sista kommentaren på denna sida
+      då allt kommer vara repetitive.-->
   </article>
   <article>
     <figure class="alignleft">
@@ -118,7 +119,5 @@
       </article>
 </div>
 </div>
-<footer>
-
-</footer>
+<footer>&copy; Lars Gunther och Thelin AB</footer> <!--La till samma footer som på index.html-->
 </body>
